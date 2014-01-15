@@ -1,0 +1,212 @@
+{
+    "project": {},
+    "files": {
+        "src\\Validator.js": {
+            "name": "src\\Validator.js",
+            "modules": {},
+            "classes": {
+                "Validator": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {},
+    "classes": {
+        "Validator": {
+            "name": "Validator",
+            "shortname": "Validator",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\Validator.js",
+            "line": 2,
+            "description": "값 검증을 위한 객체.<br/>\nmethod chain 형식으로 구현되어있다.<br/>\n검증할 메소드를 method chain 형식으로 호출한 뒤, 최종적으로\nrun을 호출하면 실제검증을 수행하고 검증결과를 반환한다.<br/>\nex) var valid = new Validator();<br/>\n    valid.isNotEmpty($(\"#target\").val(), \"대상이 비었습니다\")<br/>\n         .isNotEmpty($(\"#target2\").val(), \"대상이 비었습니다\")<br/>\n         .isEqual(user.password, user.password2, \"비밀번호가 같지 않습니다.\")<br/>\n         .is(user.name.length > 1, \"이름이 너무 짧습니다.\")<br/>\n         .run();<br/>",
+            "params": [
+                {
+                    "name": "options.onlyFirstMessageNotify",
+                    "description": "true인 경우, 에러 메시지가 여러개여도 최초의 메시지만 notify 된다. 기본값 true"
+                },
+                {
+                    "name": "options.notifier",
+                    "description": "에러 메시지를 notify할 함수. 기본동작은 alert함수."
+                }
+            ],
+            "is_constructor": 1
+        }
+    },
+    "classitems": [
+        {
+            "file": "src\\Validator.js",
+            "line": 35,
+            "itemtype": "property",
+            "name": "isValid 검증 성공 여부.<br/>\n검증이 1개라도 실패했다면 해당 값은 false로 바뀐다.",
+            "type": "{Boolean}",
+            "class": "Validator"
+        },
+        {
+            "file": "src\\Validator.js",
+            "line": 42,
+            "itemtype": "property",
+            "name": "validCount 검증이 일어난 횟수",
+            "type": "{Number}",
+            "class": "Validator"
+        },
+        {
+            "file": "src\\Validator.js",
+            "line": 48,
+            "itemtype": "property",
+            "name": "failmessageList 검증 실패 메시지를 담아둔 Array",
+            "type": "{Array}",
+            "class": "Validator"
+        },
+        {
+            "file": "src\\Validator.js",
+            "line": 54,
+            "itemtype": "property",
+            "name": "onlyFirstMessageNotify 첫번째 메시지만 notify할지 여부",
+            "type": "{Boolean}",
+            "class": "Validator"
+        },
+        {
+            "file": "src\\Validator.js",
+            "line": 60,
+            "itemtype": "property",
+            "name": "notifier 검증 알림에 사용할 함수",
+            "type": "{Function}",
+            "class": "Validator"
+        },
+        {
+            "file": "src\\Validator.js",
+            "line": 66,
+            "description": "condition이 false인지 체크한다.<br/>\ncondition에 함수를 넘길경우 해당 함수를 실행하며,\n해당 함수는 실행결과값으로 true 혹은 false를 리턴해야 한다.<br/>\ncondition의 값이 false거나 실행결과가 false인 경우 검증 실패처리한다.",
+            "itemtype": "method",
+            "name": "is",
+            "params": [
+                {
+                    "name": "conditionOrFunction",
+                    "description": "검증 조건 혹은 검증을 실행할 function"
+                },
+                {
+                    "name": "failMessage",
+                    "description": "검증 실패 시 추가될 메시지"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Validator"
+            },
+            "class": "Validator"
+        },
+        {
+            "file": "src\\Validator.js",
+            "line": 94,
+            "description": "value의 값이 비어있지 않은지 체크한다.",
+            "itemtype": "method",
+            "name": "isNotEmpty",
+            "params": [
+                {
+                    "name": "value",
+                    "description": "비어있는지 여부를 체크할 값"
+                },
+                {
+                    "name": "failMessage",
+                    "description": "검증 실패 시 추가될 메시지"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Validator"
+            },
+            "class": "Validator"
+        },
+        {
+            "file": "src\\Validator.js",
+            "line": 105,
+            "description": "a와 b가 같은지 체크한다.<br/>\n=== 를 이용해 비교하므로, true와 'true'는 같지 않다고 판단한다.",
+            "itemtype": "method",
+            "name": "equals",
+            "params": [
+                {
+                    "name": "a",
+                    "description": ""
+                },
+                {
+                    "name": "b",
+                    "description": ""
+                },
+                {
+                    "name": "failMessage",
+                    "description": ""
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Validator"
+            },
+            "class": "Validator"
+        },
+        {
+            "file": "src\\Validator.js",
+            "line": 118,
+            "description": "a와 b가 같지 않은지 체크한다.",
+            "params": [
+                {
+                    "name": "a",
+                    "description": ""
+                },
+                {
+                    "name": "b",
+                    "description": ""
+                },
+                {
+                    "name": "failMessage",
+                    "description": ""
+                }
+            ],
+            "itemtype": "method",
+            "name": "notEquals",
+            "return": {
+                "description": "",
+                "type": "Validator"
+            },
+            "class": "Validator"
+        },
+        {
+            "file": "src\\Validator.js",
+            "line": 130,
+            "description": "검증 결과를 실행한다.<br/>\n만일 검증 결과가 false인 경우\n설정된 notifier를 실행한다.\nrun 호출 이후 method chaining은 종료되며, 검증결과를 반환한다.",
+            "itemtype": "method",
+            "name": "run",
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "class": "Validator"
+        }
+    ],
+    "warnings": [
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " src\\Validator.js:66"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " src\\Validator.js:94"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " src\\Validator.js:105"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " src\\Validator.js:118"
+        },
+        {
+            "message": "replacing incorrect tag: returns with return",
+            "line": " src\\Validator.js:130"
+        }
+    ]
+}
