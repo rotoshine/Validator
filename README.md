@@ -2,7 +2,7 @@
 Validator는 여러가지 검증해야하는 부분에서 method chain 형태로 검증을 편하게 할 수 있는 객체이다.
 
 #사용법
-``
+`
 // 아래와 같이 생성한다.
 var validator = new Validator();
 
@@ -19,16 +19,18 @@ var failValidator = new Validator();
 failValidator
   .is(false, "검증에 실패했습니다.")
   .run(); // "검증에 실패했습니다" 라는 alert 뜨고 false return
+`
 
 #빌드
-``
+`
 npm install
 grunt
-
+`
 #테스트 실행
-``
+`
 npm install
 grunt karma
+`
 
 
 #문서 생성
