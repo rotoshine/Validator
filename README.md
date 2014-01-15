@@ -9,7 +9,7 @@ var validator = new Validator();  // 생성
 // 설정된 notifier 함수가 실행되며 검증결과를 알려준다.
 validator
   .is(window, "전역객체가 존재하지 않습니다.")
-  .Equals("A", "A", "두 객체가 같지 않습니다.")
+  .equals("A", "A", "두 객체가 같지 않습니다.")
   .notEquals("A", "B", "두 객체가 같으면 안 됩니다.")
   .run(); // true return
 
